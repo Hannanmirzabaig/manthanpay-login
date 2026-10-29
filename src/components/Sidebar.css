@@ -1,0 +1,378 @@
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 252px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: #f2f2f2;
+  border-right: 1px solid #dce5f3;
+  box-shadow: 4px 0 18px rgba(25, 48, 90, 0.06);
+  z-index: 100;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* =========================
+   BRAND / LOGO
+========================= */
+
+.sidebar-brand {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  background: transparent;
+  border-bottom: 1px solid #e1e8f4;
+}
+
+.sidebar-logo {
+  display: block;
+  width: 180px;
+  height: 62px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.brand-fallback {
+  color: #173b75;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.sidebar-bottom {
+  margin-top: 22px;
+  margin-bottom: 18px;
+  padding: 16px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid #dce5f3;
+  border-bottom: 1px solid #dce5f3;
+}
+
+.admin-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3978ed, #1e40af);
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.admin-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-details strong {
+  color: #243653;
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-details small {
+  color: #8491a7;
+  font-size: 10px;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 12px;
+}
+
+.menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 15px;
+  color: #52627e;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu-item:hover {
+  color: #1d4ed8;
+  background: #e3edff;
+  border-color: #d5e3ff;
+  transform: translateX(2px);
+}
+
+.menu-item.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb 0%, #1746b5 100%);
+  border-color: #2563eb;
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  min-width: 20px;
+  font-size: 17px;
+}
+
+.menu-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.menu-active-indicator {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* =========================
+   HELP SECTION
+========================= */
+
+.sidebar-help {
+  margin: 24px 14px 16px;
+  padding: 15px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #dce7fa;
+  border-radius: 12px;
+}
+
+.help-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  color: #2563eb;
+  background: #e5edff;
+  border-radius: 9px;
+  font-size: 15px;
+}
+
+.sidebar-help strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #20365c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sidebar-help span {
+  display: block;
+  color: #77849b;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.sidebar-logout-wrapper {
+  margin-top: auto;
+  padding: 14px;
+  border-top: 1px solid #dce5f3;
+}
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 15px;
+  color: #dc2626;
+  background: #fff0f0;
+  border: 1px solid #fbd5d5;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-logout:hover {
+  color: #ffffff;
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.sidebar-logout span:first-child {
+  font-size: 17px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #cbd7eb;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #a8bbdc;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .sidebar-brand {
+    min-height: 80px;
+    padding: 10px 5px;
+  }
+
+  .sidebar-logo {
+    width: 54px;
+    height: 48px;
+  }
+
+  .brand-fallback {
+    font-size: 10px;
+  }
+
+  .sidebar-menu {
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .menu-item {
+    justify-content: center;
+    padding: 12px 8px;
+    gap: 0;
+  }
+
+  .menu-item:hover {
+    transform: none;
+  }
+
+  .menu-label,
+  .menu-active-indicator,
+  .sidebar-help,
+  .admin-details {
+    display: none;
+  }
+
+  .menu-icon {
+    font-size: 19px;
+  }
+
+  .sidebar-bottom {
+    justify-content: center;
+    padding: 12px 5px;
+  }
+
+  .admin-avatar {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .sidebar-logout-wrapper {
+    padding: 10px 8px;
+  }
+
+  .sidebar-logout {
+    justify-content: center;
+    padding: 10px 5px;
+  }
+
+  .sidebar-logout span:last-child {
+    display: none;
+  }
+}
+
+.sidebar-bottom-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 14px;
+}
+
+.sidebar-bottom-actions .sidebar-logout-wrapper {
+  margin-top: 0;
+  padding: 0;
+  border-top: none;
+}
+.sidebar-bottom-actions > .menu-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 13px !important;
+  padding: 12px 15px !important;
+}
+
+.sidebar-bottom-actions > .menu-item .menu-icon {
+  width: 20px;
+  min-width: 20px;
+  flex: 0 0 20px;
+}
+
+.sidebar-bottom-actions > .menu-item .menu-label {
+  flex: 0 0 auto;
+}

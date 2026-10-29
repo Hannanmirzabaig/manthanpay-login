@@ -1,0 +1,456 @@
+
+/* =========================================
+   PAGE BACKGROUND - SAME AS LOGIN
+========================================= */
+
+.terms-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  overflow: hidden;
+  isolation: isolate;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #142b4d;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(255,255,255,0.98) 0%,
+      rgba(245,249,255,0.94) 35%,
+      transparent 72%
+    ),
+    linear-gradient(
+      125deg,
+      #e9f2ff 0%,
+      #f8fbff 45%,
+      #e8f1ff 100%
+    );
+}
+
+.terms-page * {
+  box-sizing: border-box;
+}
+
+/* BACKGROUND GRID */
+
+.terms-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(44, 105, 177, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44, 105, 177, 0.035) 1px, transparent 1px);
+
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+/* =========================================
+   BACKGROUND DECORATION
+========================================= */
+
+.terms-bg-decoration {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.terms-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.terms-circle-one {
+  width: 520px;
+  height: 520px;
+  top: -240px;
+  right: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(55, 137, 239, 0.15),
+    transparent 70%
+  );
+}
+
+.terms-circle-two {
+  width: 580px;
+  height: 580px;
+  bottom: -310px;
+  left: -150px;
+  background: radial-gradient(
+    circle,
+    rgba(37, 111, 220, 0.13),
+    transparent 70%
+  );
+}
+
+.terms-circle-three {
+  width: 350px;
+  height: 350px;
+  top: 35%;
+  right: 7%;
+  background: radial-gradient(
+    circle,
+    rgba(98, 166, 255, 0.10),
+    transparent 70%
+  );
+}
+
+/* FLOATING TEXT */
+
+.terms-floating-text {
+  position: absolute;
+  color: rgba(38, 105, 183, 0.075);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  white-space: nowrap;
+  animation: termsFloatText 12s ease-in-out infinite;
+}
+
+.terms-text-one {
+  top: 23%;
+  left: 8%;
+}
+
+.terms-text-two {
+  top: 32%;
+  right: 9%;
+  animation-delay: 2s;
+}
+
+.terms-text-three {
+  bottom: 17%;
+  left: 26%;
+  animation-delay: 3s;
+}
+
+.terms-watermark {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(37, 105, 185, 0.025);
+  font-size: clamp(65px, 12vw, 155px);
+  font-weight: 900;
+  letter-spacing: 10px;
+  white-space: nowrap;
+}
+
+@keyframes termsFloatText {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translateY(-13px);
+    opacity: 1;
+  }
+}
+
+/* ORBIT CIRCLES */
+
+.terms-finance-orbit {
+  position: absolute;
+  border: 1px solid rgba(59, 130, 204, 0.09);
+  border-radius: 50%;
+  animation: termsOrbitPulse 8s ease-in-out infinite;
+}
+
+.terms-orbit-one {
+  width: 340px;
+  height: 340px;
+  top: 15%;
+  right: 15%;
+}
+
+.terms-orbit-two {
+  width: 500px;
+  height: 500px;
+  bottom: -18%;
+  left: 25%;
+  animation-delay: 2s;
+}
+
+@keyframes termsOrbitPulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.terms-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  height: calc(100vh - 24px);
+  max-height: 750px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 32px 16px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 18px 55px rgba(34, 83, 145, 0.09),
+    0 2px 8px rgba(34, 83, 145, 0.035);
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.terms-heading {
+  flex-shrink: 0;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.terms-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 9px;
+  background: #edf3ff;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.terms-heading h1 {
+  margin: 0 0 6px;
+  color: #17375f;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.terms-heading p {
+  margin: 0;
+  color: #8293a9;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   TERMS CONTENT - ONLY THIS SCROLLS
+========================================= */
+
+.terms-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 8px 0 10px;
+  padding: 0 9px 0 0;
+  text-align: left;
+  overscroll-behavior: contain;
+}
+
+.terms-content h3 {
+  margin: 13px 0 5px;
+  color: #34415b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.terms-content p {
+  margin: 0;
+  color: #8490a4;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* SCROLLBAR */
+
+.terms-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.terms-content::-webkit-scrollbar-thumb {
+  background: #cbd5e5;
+  border-radius: 10px;
+}
+
+.terms-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.terms-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.terms-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 140px;
+  min-height: 38px;
+  margin: 5px auto 0;
+  padding: 8px 18px;
+
+  color: #ffffff;
+  background: linear-gradient(110deg, #155db5, #3189ed);
+  border: none;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  box-shadow: 0 6px 17px rgba(34, 112, 207, 0.16);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.terms-back-button:hover {
+  background: linear-gradient(110deg, #155db5, #3189ed);
+  box-shadow: 0 9px 22px rgba(34, 112, 207, 0.25);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.terms-bottom {
+  flex-shrink: 0;
+  margin-top: 12px;
+  padding-top: 10px;
+  color: #9aa9bb;
+  border-top: 1px solid rgba(237, 240, 246, 0.9);
+  text-align: center;
+  font-size: 10px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 480px) {
+  .terms-page {
+    padding: 8px;
+  }
+
+  .terms-card {
+    height: calc(100vh - 16px);
+    max-height: none;
+    padding: 16px 18px 12px;
+    border-radius: 14px;
+  }
+
+  .terms-heading h1 {
+    font-size: 21px;
+  }
+
+  .terms-heading p {
+    font-size: 11px;
+  }
+
+  .terms-content {
+    margin: 6px 0 8px;
+  }
+
+  .terms-content h3 {
+    margin-top: 11px;
+  }
+
+  .terms-back-button {
+    min-width: 130px;
+    min-height: 36px;
+    padding: 7px 16px;
+  }
+
+  .terms-bottom {
+    margin-top: 10px;
+    padding-top: 8px;
+  }
+
+  .terms-floating-text {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .terms-text-three,
+  .terms-orbit-two {
+    display: none;
+  }
+
+  .terms-watermark {
+    font-size: 60px;
+    letter-spacing: 4px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .terms-floating-text,
+  .terms-finance-orbit {
+    animation: none;
+  }
+}
+.terms-page-logo {
+  position: absolute;
+  top: 25px;
+  left: 35px;
+  z-index: 5;
+}
+
+.terms-page-logo img {
+  width: 160px;
+  height: auto;
+  max-height: 65px;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .terms-page-logo {
+    top: 15px;
+    left: 15px;
+  }
+
+  .terms-page-logo img {
+    width: 125px;
+  }
+}
